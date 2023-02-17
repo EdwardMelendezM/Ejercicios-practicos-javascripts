@@ -12,7 +12,7 @@
 
 function ambito() {
   let a = "ambito"
-  if (true) {
+  if (true && a == "ambito") {
     let a = "onichan"
     console.log(a);
   }
