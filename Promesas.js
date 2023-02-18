@@ -1,11 +1,51 @@
-console.log("Hola mundo");
-let num = 0;
-const array = [1, 2, 3, 4, 5, 6]
-let aux = 0;
-const arrayNew = array.map(num => {
-  aux += num
-  return aux
+//La promesa
+//Es una forma de administrar operacione asincronas
+let x = 10;
+
+const p = new Promise((resolve, reject) => {
+  if (x == 10) {
+    resolve("La variable es igual a 10");
+  } else {
+    reject("La variable no es igual a 10");
+  }
 })
 
-console.log(array);
-console.log(arrayNew);
+// p
+//   .then(res => {
+//     console.log("success " + res)
+//   })
+//   .catch(error => {
+//     console.log("error " + error);
+//   })
+
+// console.log("1.Proceso iniciado");
+// setTimeout(() => {
+//   x = x * 3 + 2
+//   console.log("2.Proceso terminado");
+// }, 2000);
+// console.log("3.El resultado es , x =", x);
+
+// const promesa = new Promise((resolve, reject) => {
+
+//   setTimeout(() => {
+//     x = x * 3 + 2
+//     console.log("2.Proceso terminado");
+//     resolve(x);
+//   }, 2000);
+
+// })
+// console.log("1.Proceso iniciado");
+// promesa.then(res => {
+//   console.log("3. El resultado es : x=", res);
+// })
+
+const getUser = (numero) => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    numero = numero * 100
+    resolve(numero)
+  }, 3000);
+
+})
+
+console.log("INCIA LA OPERACION");
+getUser(10).then(res => console.log("La respuesta es :" + res))
